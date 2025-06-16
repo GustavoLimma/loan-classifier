@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado da Análise</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .dataframe {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .dataframe th, .dataframe td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .dataframe th {
+            background-color: #f2f2f2;
+        }
+
+        .resultado {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        img {
+            margin-top: 20px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Resultado da Análise de Empréstimo</h1>
+    <div>
+        <p class="resultado">{{ result }}</p>
+        <img src="{{ url_for('static', filename=imagem) }}" alt="Resultado">
+    </div>
+    <div>
+        <h2>Dados Informados</h2>
+        {{ tables[0]|safe }}
+    </div>
+    <a href="{{ url_for('home') }}">Voltar à Página Inicial</a>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário do Cliente</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Preencha os dados do cliente para análise de empréstimo</h1>
+    <form action="{{ url_for('show_data') }}" method="post">
+        <label for="Gender">Gênero:</label>
+        <select name="Gender" required>
+            <option value="Male">Masculino</option>
+            <option value="Female">Feminino</option>
+        </select><br><br>
+
+        <label for="Married">É casado(a)?</label>
+        <select name="Married" required>
+            <option value="Yes">Sim</option>
+            <option value="No">Não</option>
+        </select><br><br>
+
+        <label for="Dependents">Número de Dependentes:</label>
+        <input type="text" name="Dependents" required><br><br>
+
+        <label for="Education">Nível de Educação:</label>
+        <select name="Education" required>
+            <option value="Graduate">Graduado</option>
+            <option value="Not Graduate">Não Graduado</option>
+        </select><br><br>
+
+        <label for="Self_Employed">Autônomo?</label>
+        <select name="Self_Employed" required>
+            <option value="Yes">Sim</option>
+            <option value="No">Não</option>
+        </select><br><br>
+
+        <label for="ApplicantIncome">Renda Mensal:</label>
+        <input type="number" name="ApplicantIncome" required><br><br>
+
+        <label for="LoanAmount">Valor do Empréstimo:</label>
+        <input type="number" name="LoanAmount" required><br><br>
+
+        <input type="submit" value="Analisar Empréstimo">
+    </form>
+</body>
+</html>
